@@ -1,0 +1,3 @@
+2022-03-02 15:44:46 [INFO ] main StartupInfoLogger.java:55 com.zby.fin.core.ServiceCoreApplication Starting ServiceCoreApplication on DESKTOP-1P8HBKS with PID 15580 (F:\IDEA\fin\service-core\target\classes started by BingyuanZhang in F:\IDEA\fin)
+2022-03-02 15:44:46 [INFO ] main SpringApplication.java:655 com.zby.fin.core.ServiceCoreApplication The following profiles are active: prod
+2022-03-02 15:44:49 [INFO ] main StartupInfoLogger.java:61 com.zby.fin.core.ServiceCoreApplication Started ServiceCoreApplication in 2.902 seconds (JVM running for 3.325)

@@ -1,0 +1,53 @@
+server:
+  port: 8120 # 服务端口
+
+spring:
+  profiles:
+    active: dev # 环境设置
+  application:
+    name: service-sms # 服务名
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+#    password: 123456 #默认为空
+    timeout: 10000ms #最大等待时间，超时则抛出异常，否则请求一直等待
+    lettuce:
+      pool:
+        max-active: 20  #最大连接数，负值表示没有限制，默认8
+        max-wait: -1    #最大阻塞等待时间，负值表示没限制，默认-1
+        max-idle: 8     #最大空闲连接，默认8
+        min-idle: 0     #最小空闲连接，默认0
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # nacos服务地址
+  rabbitmq:
+    host: 192.168.2.194
+    port: 5672
+    virtual-host: /finhost
+    username: finuser
+    password: 123456
+
+#容联云短信
+cloopen:
+  sms:
+    account_sid: 8aaf07087f639e2b017f67d125140118
+    account_token: 5db03e9e339246b69484ad917796615c
+    account_appid: 8aaf07087f639e2b017f67d12627011e
+    server_ip: app.cloopen.com
+    server_port: 8883
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 10000 #连接超时配置
+        readTimeout: 600000 #执行超时配置
+  sentinel:
+    enabled: true
+
+logging:
+  level:
+    com.zby.fin.sms.client.CoreUserInfoClient: DEBUG #以什么级别监控哪个接口

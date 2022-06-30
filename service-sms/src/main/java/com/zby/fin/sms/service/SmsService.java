@@ -1,0 +1,5 @@
+package com.zby.fin.sms.service;
+
+public interface SmsService {
+    void send(String mobile, String randomCode);
+}
